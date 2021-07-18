@@ -1,0 +1,57 @@
+{
+  "name": "donnyburnside.com",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently --kill-others \"npx @11ty/eleventy --config=eleventy.config.js --serve\" \"webpack --stats=minimal --watch\"",
+    "build": "cross-env ELEVENTY_ENV=production npx @11ty/eleventy --config=eleventy.config.js",
+    "postbuild": "cross-env NODE_ENV=production webpack --progress --stats=minimal",
+    "clean": "rimraf ./dist"
+  },
+  "browserslist": [
+    "last 3 chrome versions",
+    "last 3 chromeandroid versions",
+    "last 3 firefox versions",
+    "last 3 opera versions",
+    "last 3 edge versions",
+    "safari >= 10",
+    "ios >= 10"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@tailwindcss/aspect-ratio": "^0.2.1",
+    "@tailwindcss/forms": "^0.3.3",
+    "@tailwindcss/line-clamp": "^0.2.1",
+    "@tailwindcss/typography": "^0.4.1",
+    "autoprefixer": "^10.3.1",
+    "babel-loader": "^8.2.2",
+    "concurrently": "^6.2.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "core-js": "^3.15.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.7",
+    "css-minimizer-webpack-plugin": "^3.0.2",
+    "mini-css-extract-plugin": "^1.6.2",
+    "postcss-loader": "^6.1.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.35.2",
+    "sass-loader": "^12.1.0",
+    "tailwindcss": "^2.2.4",
+    "terser-webpack-plugin": "^5.1.4",
+    "webpack": "^5.45.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donnyburnside/donnyburnside.com.git"
+  },
+  "author": {
+    "name": "Donny Burnside",
+    "url": "http://www.donnyburnside.com"
+  },
+  "homepage": "http://www.donnyburnside.com",
+  "license": "UNLICENSED"
+}
