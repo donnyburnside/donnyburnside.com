@@ -18,6 +18,10 @@
         <link href="{{ 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=IBM+Plex+Serif:wght@100;200;300;400;500;600;700&family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap' | url }}" rel="stylesheet">
         <link href="{{ '/css/app.css' | url }}" rel="stylesheet">
         <script src="{{ '/js/app.js' | url }}" defer></script>
+
+        {% if env == 'production' %}
+            {%- include analytics.liquid -%}
+        {% endif %}
     </head>
     <body class="font-sans antialiased min-h-screen flex flex-col bg-gray-100 text-gray-700">
         {{- content -}}
