@@ -6,7 +6,13 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: '"IBM Plex Sans", sans-serif',
+        serif: '"IBM Plex Serif", sans-serif',
+        mono: '"IBM Plex Mono", sans-serif',
+      }
+    },
   },
   variants: {
     extend: {},
