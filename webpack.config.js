@@ -11,9 +11,9 @@ const OUTPUT_DIR = path.resolve(__dirname, 'dist');
 // Create  the config
 const config = {
     entry: {
-        app: [
-            './src/scripts/app.js',
-            './src/styles/app.scss'
+        main: [
+            './src/scripts/main.js',
+            './src/styles/main.scss'
         ]
     },
     output: {
