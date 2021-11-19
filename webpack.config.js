@@ -6,7 +6,7 @@ const path = require('path'),
 
 // Settings
 const PRODUCTION = process.env.NODE_ENV === 'production';
-const OUTPUT_DIR = path.resolve(__dirname, 'dist');
+const OUTPUT_DIR = path.resolve(__dirname, 'dist', 'static');
 
 // Create  the config
 const config = {
