@@ -12,6 +12,8 @@
         </title>
         <meta name="description" content="{{ metadata.description | escape }}">
 
+        <link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
+
         <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
 
         <link rel="preconnect" href="{{ 'https://fonts.googleapis.com' | url }}">
