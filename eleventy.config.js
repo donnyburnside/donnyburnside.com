@@ -5,6 +5,9 @@ module.exports = function(eleventyConfig) {
     // https://www.11ty.dev/docs/data-deep-merge/
     eleventyConfig.setDataDeepMerge(true);
 
+    // Filters
+    eleventyConfig.addLiquidFilter('asset_url', (value) => `/static/${value}`);
+
     // Enable 404 errors in development
     eleventyConfig.setBrowserSyncConfig({
         callbacks: {
