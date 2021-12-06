@@ -1,0 +1,67 @@
+<!doctype html>
+<html class="no-js" lang="en-GB">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            {%- if page.url == '/' -%}
+                {{ metadata.title | escape }} &ndash; {{ metadata.description | escape }}
+            {%- elsif title -%}
+                {{ title | escape }} &ndash; {{ metadata.title | escape }}
+            {%- else -%}
+                {{ metadata.title | escape }}
+            {%- endif -%}
+        </title>
+        <meta name="description" content="{{ metadata.description | escape }}">
+
+        <link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
+
+        <script>
+            document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+        
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        </script>
+
+        <link rel="preconnect" href="{{ 'https://fonts.googleapis.com' | url }}">
+        <link rel="preconnect" href="{{ 'https://fonts.gstatic.com' | url }}">
+
+        <link href="{{ 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=IBM+Plex+Serif:wght@100;200;300;400;500;600;700&family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap' | url }}" rel="stylesheet">
+        <link href="{{ '/css/app.css' | asset_url }}" rel="stylesheet">
+        <script src="{{ '/js/app.js' | asset_url }}" defer></script>
+
+        {% if env == 'production' %}
+            {%- include analytics.liquid -%}
+        {% endif %}
+    </head>
+    <body class="max-w-md sm:max-w-lg mx-8 sm:mx-16 my-12 sm:my-24 font-serif text-base sm:text-lg antialiased bg-white text-gray-500 dark:bg-gray-800 dark:text-gray-400">
+        <header>
+            <div class="flex flex-row flex-nowrap items-center">
+                <div class="flex-none relative w-24 h-24 sm:w-32 sm:h-32 mr-6 sm:mr-10">
+                    <div class="absolute inset-0 block w-full h-full transform -rotate-6 bg-gray-200 dark:bg-gray-600" aria-hidden="true"></div>
+                    <div class="absolute inset-0 block w-full h-full transform rotate-6 bg-gray-200 dark:bg-gray-600" aria-hidden="true"></div>
+                    <img class="relative block w-full h-full object-cover border border-gray-300 dark:border-gray-500" src="{{ '/images/donny-burnside-avatar.png' | asset_url }}" alt="Donny Burnside">
+                </div>
+                <div class="flex-grow whitespace-nowrap">
+                    <h1 class="font-sans text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100">
+                        {{- metadata.title | escape -}}
+                    </h1>
+                    <p>
+                        {{- metadata.description | escape -}}
+                    </p>
+                </div>
+            </div>
+        </header>
+        <main>
+            {{- content -}}
+        </main>
+        <footer>
+            <p>
+                &copy; 2021 {{ metadata.title }}. All Rights Reserved.
+            </p>
+        </footer>
+    </body>
+</html>

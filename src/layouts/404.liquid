@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>
-            Donny Burnside
+            {{ metadata.title | escape }}
         </title>
 
         <script>
@@ -17,22 +17,16 @@
             }
         </script>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="{{ 'https://fonts.googleapis.com' | url }}">
+        <link rel="preconnect" href="{{ 'https://fonts.gstatic.com' | url }}">
 
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=IBM+Plex+Serif:wght@100;200;300;400;500;600;700&family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-        <link href="/static//css/app.css" rel="stylesheet">
-        <script src="/static//js/app.js" defer></script>
+        <link href="{{ 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=IBM+Plex+Serif:wght@100;200;300;400;500;600;700&family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap' | url }}" rel="stylesheet">
+        <link href="{{ '/css/app.css' | asset_url }}" rel="stylesheet">
+        <script src="{{ '/js/app.js' | asset_url }}" defer></script>
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46000033-20"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-46000033-20');
-</script>
+        {% if env == 'production' %}
+            {%- include analytics.liquid -%}
+        {% endif %}
     </head>
     <body class="max-w-md sm:max-w-lg mx-8 sm:mx-16 my-12 sm:my-24 font-serif text-base sm:text-lg antialiased bg-white text-gray-500 dark:bg-gray-900 dark:text-gray-400">
         <article class="my-12 sm:my-24">
@@ -42,7 +36,7 @@
             <p class="mb-4">
                 Sorry, the page you were looking for could not be found.
             </p>
-            <a class="inline-flex underline hover:no-underline" href="/">
+            <a class="inline-flex underline hover:no-underline" href="{{ '/' | url }}">
                 Go back home
             </a>
         </article>

@@ -1,55 +1,7 @@
-<!doctype html>
-<html class="no-js" lang="en-GB">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Donny Burnside &ndash; Web Developer</title>
-        <meta name="description" content="Web Developer">
-
-        <link rel="canonical" href="http://www.donnyburnside.com/">
-
-        <script>
-            document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-        
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-        </script>
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=IBM+Plex+Serif:wght@100;200;300;400;500;600;700&family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-        <link href="/static//css/app.css" rel="stylesheet">
-        <script src="/static//js/app.js" defer></script>
-
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46000033-20"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-46000033-20');
-</script>
-    </head>
-    <body class="max-w-md sm:max-w-lg mx-8 sm:mx-16 my-12 sm:my-24 font-serif text-base sm:text-lg antialiased bg-white text-gray-500 dark:bg-gray-800 dark:text-gray-400">
-        <header>
-            <div class="flex flex-row flex-nowrap items-center">
-                <div class="flex-none relative w-24 h-24 sm:w-32 sm:h-32 mr-6 sm:mr-10">
-                    <div class="absolute inset-0 block w-full h-full transform -rotate-6 bg-gray-200 dark:bg-gray-600" aria-hidden="true"></div>
-                    <div class="absolute inset-0 block w-full h-full transform rotate-6 bg-gray-200 dark:bg-gray-600" aria-hidden="true"></div>
-                    <img class="relative block w-full h-full object-cover border border-gray-300 dark:border-gray-500" src="/static//images/donny-burnside-avatar.png" alt="Donny Burnside">
-                </div>
-                <div class="flex-grow whitespace-nowrap">
-                    <h1 class="font-sans text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100">Donny Burnside</h1>
-                    <p>Web Developer</p>
-                </div>
-            </div>
-        </header>
-        <main><article class="my-12 sm:my-24">
+---
+layout: base.liquid
+---
+<article class="my-12 sm:my-24">
     <h2 class="font-sans text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100">
         About
     </h2>
@@ -110,11 +62,4 @@
         I'm happy to write back if you'd like to send me an <a class="inline-flex underline hover:no-underline" href="mailto:donnyburnside@icloud.com">email</a>.
         Otherwise you can find me on <a class="inline-flex underline hover:no-underline" href="https://linkedin.com/in/donnyburnside" target="_blank" rel="noopener noreferrer">LinkedIn</a> and see some of my work on <a class="inline-flex underline hover:no-underline" href="https://github.com/donnyburnside" target="_blank" rel="noopener noreferrer">GitHub</a> and <a class="inline-flex underline hover:no-underline" href="https://codepen.io/donnyburnside" target="_blank" rel="noopener noreferrer">CodePen</a>.
     </p>
-</article></main>
-        <footer>
-            <p>
-                &copy; 2021 Donny Burnside. All Rights Reserved.
-            </p>
-        </footer>
-    </body>
-</html>
+</article>
