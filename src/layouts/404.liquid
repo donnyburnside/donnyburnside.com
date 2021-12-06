@@ -7,7 +7,15 @@
             {{ metadata.title | escape }}
         </title>
 
-        <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+        <script>
+            document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+        
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        </script>
 
         <link rel="preconnect" href="{{ 'https://fonts.googleapis.com' | url }}">
         <link rel="preconnect" href="{{ 'https://fonts.gstatic.com' | url }}">
@@ -20,9 +28,9 @@
             {%- include analytics.liquid -%}
         {% endif %}
     </head>
-    <body class="max-w-md sm:max-w-lg mx-8 sm:mx-16 my-12 sm:my-24 font-serif text-base sm:text-lg antialiased">
+    <body class="max-w-md sm:max-w-lg mx-8 sm:mx-16 my-12 sm:my-24 font-serif text-base sm:text-lg antialiased bg-white text-gray-500 dark:bg-gray-900 dark:text-gray-400">
         <article class="my-12 sm:my-24">
-            <h1 class="font-sans text-lg sm:text-xl font-semibold">
+            <h1 class="font-sans text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100">
                 Page not found
             </h1>
             <p class="mb-4">
