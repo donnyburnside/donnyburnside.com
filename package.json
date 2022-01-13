@@ -1,6 +1,6 @@
 {
   "name": "donnyburnside.com",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "concurrently --kill-others \"npx @11ty/eleventy --config=eleventy.config.js --serve\" \"webpack --stats=minimal --watch\"",
