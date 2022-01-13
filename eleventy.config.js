@@ -22,7 +22,8 @@ module.exports = function(eleventyConfig) {
             },
         },
         ui: false,
-        ghostMode: false
+        ghostMode: false,
+        open: true,
     });
 
     // Directories
