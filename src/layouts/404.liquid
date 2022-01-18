@@ -25,7 +25,7 @@
         <script src="{{ '/js/app.js' | asset_url }}" defer></script>
 
         {% if env == 'production' %}
-            {%- include analytics.liquid -%}
+            {%- include 'analytics' -%}
         {% endif %}
     </head>
     <body class="max-w-md sm:max-w-lg mx-8 sm:mx-16 my-12 sm:my-24 font-serif text-base sm:text-lg antialiased bg-white text-gray-500 dark:bg-gray-800 dark:text-gray-400">
