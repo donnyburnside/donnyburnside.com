@@ -96,6 +96,11 @@ const config = {
                     globOptions: {
                         ignore: ['**/.gitkeep'],
                     },
+                },
+                {
+                    from: 'public',
+                    to: '../',
+                    noErrorOnMissing: true
                 }
             ]
         }),
