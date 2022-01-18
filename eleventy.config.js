@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { DateTime } = require('luxon');
 
 module.exports = function(eleventyConfig) {
     // Enable deep merge
@@ -7,6 +8,9 @@ module.exports = function(eleventyConfig) {
 
     // Filters
     eleventyConfig.addLiquidFilter('asset_url', (value) => `/static/${value}`);
+
+    // Shortcodes
+    eleventyConfig.addShortcode('year', () => DateTime.fromJSDate(new Date(), {zone: 'utc'}).toFormat('yyyy'));
 
     // Enable 404 errors in development
     eleventyConfig.setBrowserSyncConfig({
@@ -22,7 +26,8 @@ module.exports = function(eleventyConfig) {
             },
         },
         ui: false,
-        ghostMode: false
+        ghostMode: false,
+        open: true,
     });
 
     // Directories

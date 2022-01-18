@@ -1,8 +1,6 @@
 module.exports = {
-  purge: [
-    './src/**/*.liquid',
-    './src/**/*.md',
-    './src/**/*.js',
+  content: [
+    './src/**/*.{liquid,md,js}',
   ],
   darkMode: 'class',
   theme: {
@@ -13,9 +11,6 @@ module.exports = {
         mono: '"IBM Plex Mono", sans-serif',
       }
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
