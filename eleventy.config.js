@@ -2,10 +2,6 @@ const fs = require('fs');
 const { DateTime } = require('luxon');
 
 module.exports = function(eleventyConfig) {
-    // Enable deep merge
-    // https://www.11ty.dev/docs/data-deep-merge/
-    eleventyConfig.setDataDeepMerge(true);
-
     // Filters
     eleventyConfig.addLiquidFilter('asset_url', (value) => `/static/${value}`);
 
