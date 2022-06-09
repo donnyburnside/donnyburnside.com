@@ -4,6 +4,7 @@ const { DateTime } = require('luxon');
 module.exports = function(eleventyConfig) {
     // Filters
     eleventyConfig.addLiquidFilter('asset_url', (value) => `/static/${value}`);
+    eleventyConfig.addLiquidFilter('image_url', (value) => `/static/images/${value}`);
 
     // Shortcodes
     eleventyConfig.addShortcode('year', () => DateTime.fromJSDate(new Date(), {zone: 'utc'}).toFormat('yyyy'));
