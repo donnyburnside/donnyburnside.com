@@ -1,4 +1,26 @@
-<!doctype html>
+---
+layout: base.liquid
+---
+<section class="">
+    <header class="bg-gray-100">
+        <div class="w-full max-w-screen-md mx-auto px-5 md:px-10 py-20 md:py-32 text-center">
+            <h1 class="text-4xl md:text-5xl">
+                {{- title | escape -}}
+            </h1>
+            <div class="mt-2.5 md:mt-5 md:text-lg">
+                {{- content -}}
+            </div>
+        </div>
+    </header>
+    <div class="w-full max-w-screen-md mx-auto my-10 md:my-20 px-5 md:px-10 text-center">
+        
+        <p class="mt-5">
+            <a class="underline hover:no-underline" href="javascript:history.go(-1)">Click here</a> to go back or <a class="underline hover:no-underline" href="{{ '/' | url }}">click here</a> to visit the home page.
+        </p>
+    </div>
+</section>
+
+{% comment %} <!doctype html>
 <html class="no-js" lang="en-GB">
     <head>
         <meta charset="utf-8">
@@ -41,4 +63,4 @@
             <p>Go <a class="underline hover:no-underline" href="{{ '/' | url }}">home</a>.</p>
         </section>
     </body>
-</html>
+</html> {% endcomment %}

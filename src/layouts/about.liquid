@@ -1,0 +1,51 @@
+---
+layout: base.liquid
+---
+<section class="">
+    <header class="bg-gray-100">
+        <div class="w-full max-w-screen-lg mx-auto md:grid md:grid-cols-12 md:gap-6">
+            <div class="w-full px-5 md:px-10 py-20 md:py-32 md:row-start-1 md:row-end-1 md:col-start-1 md:col-end-7 md:relative md:z-10">
+                <h1 class="text-4xl md:text-5xl">
+                    {{- title | escape -}}
+                </h1>
+                <p class="mt-2.5 md:mt-5 md:text-lg">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+            <div class="-mx-5 md:m-0 md:w-full md:row-start-1 md:row-end-1 md:col-start-7 md:col-end-13">
+                <figure class="block w-full h-80 sm:h-96 md:h-full bg-gray-200 md:translate-y-10">
+                    <img class="block w-full h-full object-cover object-top md:object-center" src="{{ 'donny-burnside.jpg' | image_url }}" alt="">
+                </figure>
+            </div>
+        </div>
+    </header>
+    <div class="w-full max-w-screen-lg mx-auto my-10 md:my-20 px-5 md:px-10">
+        {{- content -}}
+    </div>
+</section>
+
+{% comment %} <section class="">
+    <header class="bg-gray-100">
+        <div class="w-full max-w-screen-lg mx-auto px-5 md:px-10 grid grid-cols-1 md:grid-cols-12">
+            <div class="w-full md:row-start-1 md:row-end-1 md:col-start-1 md:col-end-8 py-20 md:py-32">
+                <h1 class="text-4xl md:text-5xl">
+                    {{- title | escape -}}
+                </h1>
+                <p class="mt-2.5 md:mt-5 md:text-lg">
+                    Lorem ipsum dolar sit amet
+                </p>
+            </div>
+            <div class="w-full md:row-start-1 md:row-end-1 md:col-start-7 md:col-end-13">
+                <figure class="block -mx-5 md:w-full md:h-full md:translate-y-16">
+                    <img class="block w-full h-full object-cover object-center" src="{{ 'donny-burnside.jpg' | image_url }}" alt="">
+                </figure>
+            </div>
+        </div>
+    </header>
+    <div class="w-full max-w-screen-lg mx-auto my-10 md:my-20 px-5 md:px-10">
+        {{- content -}}
+    </div>
+</section> {% endcomment %}

@@ -1,5 +1,5 @@
 ---
 layout: home.liquid
-permalink: /index.html
 title: Home
+permalink: "/index.html"
 ---

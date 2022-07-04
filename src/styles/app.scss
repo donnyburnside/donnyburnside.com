@@ -8,3 +8,13 @@
 
 // Utilities
 @tailwind utilities;
+
+@layer components {
+    mobile-nav {
+        display: block;
+    }
+
+    contact-form {
+        display: block;
+    }
+}

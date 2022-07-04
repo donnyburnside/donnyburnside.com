@@ -19,11 +19,13 @@
         <script>
             document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
         
+            /*
             if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 document.documentElement.classList.add('dark');
             } else {
                 document.documentElement.classList.remove('dark');
             }
+            */
         </script>
 
         <link rel="preconnect" href="{{ 'https://fonts.googleapis.com' | url }}">
@@ -37,10 +39,60 @@
             {%- include 'analytics' -%}
         {% endif %}
     </head>
-    <body class="max-w-md sm:max-w-lg mx-8 sm:mx-16 my-12 sm:my-24 font-serif text-base sm:text-lg antialiased bg-white text-gray-500 dark:bg-gray-800 dark:text-gray-400">
+    <body class="min-h-screen flex flex-col antialiased">
         <header>
-            <div class="flex flex-row flex-nowrap items-center">
-                <div class="flex-none relative w-24 h-24 sm:w-32 sm:h-32 mr-6 sm:mr-10">
+            <div class="w-full max-w-screen-lg mx-auto px-5 md:px-10 flex flex-row flex-nowrap items-center">
+                <div class="my-5 md:my-10">
+                    <a class="" href="{{ '/' | url }}">
+                        {{- metadata.title | escape -}}
+                    </a>
+                </div>
+                <mobile-nav class="md:hidden ml-auto">
+                    <details class="relative">
+                        <summary class="flex items-center p-2.5 -mr-2.5 cursor-pointer">
+                            Menu
+                        </summary>
+                        <div class="absolute top-full right-0 text-right">
+                            <ul>
+                                <li>
+                                    <a class="" href="{{ '/about/' | url }}">
+                                        About
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="" href="{{ '/posts/' | url }}">
+                                        Blog
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="" href="{{ '/contact/' | url }}">
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
+                </mobile-nav>
+                <nav class="hidden md:block ml-auto">
+                    <ul class="flex flex-row flex-wrap items-center -mr-2.5">
+                        <li>
+                            <a class="flex items-center p-2.5" href="{{ '/about/' | url }}">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a class="flex items-center p-2.5" href="{{ '/posts/' | url }}">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a class="flex items-center p-2.5" href="{{ '/contact/' | url }}">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                {% comment %} <div class="flex-none relative w-24 h-24 sm:w-32 sm:h-32 mr-6 sm:mr-10">
                     <div class="absolute inset-0 block w-full h-full transform -rotate-6 bg-gray-200 dark:bg-gray-600" aria-hidden="true"></div>
                     <div class="absolute inset-0 block w-full h-full transform rotate-6 bg-gray-200 dark:bg-gray-600" aria-hidden="true"></div>
                     <img class="relative block w-full h-full object-cover border border-gray-300 dark:border-gray-500" src="{{ '/images/donny-burnside-avatar.png' | asset_url }}" alt="Donny Burnside">
@@ -52,16 +104,18 @@
                     <p>
                         {{- metadata.description | escape -}}
                     </p>
-                </div>
+                </div> {% endcomment %}
             </div>
         </header>
-        <main>
+        <main class="flex-grow">
             {{- content -}}
         </main>
         <footer>
-            <p>
-                &copy; {% year %} {{ metadata.title }}. All Rights Reserved.
-            </p>
+            <div class="w-full max-w-screen-lg mx-auto px-5 md:px-10">
+                <p class="my-5 md:my-10">
+                    &copy; {% year %} {{ metadata.title }}. All Rights Reserved.
+                </p>
+            </div>
         </footer>
     </body>
 </html>

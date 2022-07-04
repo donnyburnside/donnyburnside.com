@@ -6,6 +6,19 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addLiquidFilter('asset_url', (value) => `/static/${value}`);
     eleventyConfig.addLiquidFilter('image_url', (value) => `/static/images/${value}`);
 
+    const filterTagList = (tags) => (tags || []).filter(tag => ['all', 'nav', 'post', 'posts'].indexOf(tag) === -1);
+    eleventyConfig.addFilter('filterTagList', filterTagList);
+
+    //  Collections
+    eleventyConfig.addCollection('tagList', function(collection) {
+        let tagSet = new Set();
+        collection.getAll().forEach(item => {
+            (item.data.tags || []).forEach(tag => tagSet.add(tag));
+        });
+    
+        return filterTagList([...tagSet]);
+    });
+
     // Shortcodes
     eleventyConfig.addShortcode('year', () => DateTime.fromJSDate(new Date(), {zone: 'utc'}).toFormat('yyyy'));
 

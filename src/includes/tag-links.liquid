@@ -1,0 +1,12 @@
+<nav class="{{ class }}">
+    <ol class="">
+        {% for tag_link in collections.tagList %}
+            {%- assign tag_slug = tag_link | slugify -%}
+            <li>
+                <a class="{% if tag_link == tag %}font-bold{% endif %}" href="{{ '/posts/tags/' | append: tag_slug | url }}" title="{{ tag_link }}">
+                    {{- tag_link -}}
+                </a>
+            </li>
+        {% endfor %}
+    </ol>
+</nav>

@@ -1,0 +1,23 @@
+<div class="">
+    <h2 class="text-2xl md:text-3xl">
+        <a href="{{ post.url | url }}" title="{{ post.data.title | escape }}">
+            {{- post.data.title | escape -}}
+        </a>
+    </h2>
+    {%- if post.data.tags.size > 0 -%}
+        <ol class="flex flex-row flex-wrap items-center gap-2.5">
+            {%- assign post_tags = post.data.tags | filterTagList -%}
+            {%- for tag in post_tags -%}
+                {%- assign tag_slug = tag | slugify -%}
+                <li>
+                    <a class="text-sm font-medium uppercase" href="{{ '/posts/tags/' | append: tag_slug | url }}" title="{{ tag }}">
+                        {{- tag -}}
+                    </a>
+                </li>
+            {%-  endfor -%}
+        </ol>
+    {%- endif -%}
+    <p class="mt-2.5">
+        Lorem ipsum dolar sit amet
+    </p>
+</div>
