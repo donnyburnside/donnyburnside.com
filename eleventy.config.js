@@ -9,6 +9,12 @@ module.exports = function(eleventyConfig) {
     // Shortcodes
     eleventyConfig.addShortcode('year', () => DateTime.fromJSDate(new Date(), {zone: 'utc'}).toFormat('yyyy'));
 
+    // Copy files
+    eleventyConfig.addPassthroughCopy({ 'src/css': 'static/css' });
+    eleventyConfig.addPassthroughCopy({ 'src/fonts': 'static/fonts' });
+    eleventyConfig.addPassthroughCopy({ 'src/images': 'static/images' });
+    eleventyConfig.addPassthroughCopy({ 'src/js': 'static/js' });
+
     // Enable 404 errors in development
     eleventyConfig.setBrowserSyncConfig({
         callbacks: {
