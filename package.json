@@ -3,46 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "concurrently --kill-others \"npx @11ty/eleventy --config=eleventy.config.js --serve\" \"webpack --stats=minimal --watch\"",
+    "start": "npx @11ty/eleventy --config=eleventy.config.js --serve",
     "build": "cross-env ELEVENTY_ENV=production npx @11ty/eleventy --config=eleventy.config.js",
-    "postbuild": "cross-env NODE_ENV=production webpack --progress --stats=minimal",
     "clean": "rimraf ./dist"
   },
-  "browserslist": [
-    "last 3 chrome versions",
-    "last 3 chromeandroid versions",
-    "last 3 firefox versions",
-    "last 3 opera versions",
-    "last 3 edge versions",
-    "safari >= 10",
-    "ios >= 10"
-  ],
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
-    "@babel/core": "^7.16.7",
-    "@babel/preset-env": "^7.16.8",
-    "@tailwindcss/aspect-ratio": "^0.4.0",
-    "@tailwindcss/forms": "^0.4.0",
-    "@tailwindcss/line-clamp": "^0.3.1",
-    "@tailwindcss/typography": "^0.5.0",
-    "autoprefixer": "^10.4.2",
-    "babel-loader": "^8.2.3",
-    "concurrently": "^7.0.0",
-    "copy-webpack-plugin": "^10.2.0",
-    "core-js": "^3.20.2",
     "cross-env": "^7.0.3",
-    "css-loader": "^6.5.1",
-    "css-minimizer-webpack-plugin": "^3.3.1",
     "luxon": "^2.3.0",
-    "mini-css-extract-plugin": "^2.4.7",
-    "postcss-loader": "^6.2.1",
-    "rimraf": "^3.0.2",
-    "sass": "^1.48.0",
-    "sass-loader": "^12.4.0",
-    "tailwindcss": "^3.0.13",
-    "terser-webpack-plugin": "^5.3.0",
-    "webpack": "^5.66.0",
-    "webpack-cli": "^4.9.1"
+    "rimraf": "^3.0.2"
   },
   "repository": {
     "type": "git",
