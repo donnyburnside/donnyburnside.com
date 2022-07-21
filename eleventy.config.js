@@ -2,6 +2,13 @@ const fs = require('fs');
 const { DateTime } = require('luxon');
 
 module.exports = function(eleventyConfig) {
+    // Copy files
+    eleventyConfig.addPassthroughCopy({
+        'src/css': 'static/css',
+        'src/js': 'static/js',
+        'src/images': 'static/images'
+    });
+
     // Filters
     eleventyConfig.addLiquidFilter('asset_url', (value) => `/static/${value}`);
     eleventyConfig.addLiquidFilter('image_url', (value) => `/static/images/${value}`);
