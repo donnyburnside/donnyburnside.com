@@ -8,9 +8,9 @@
     "clean": "rimraf ./dist"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy": "^1.0.1",
     "cross-env": "^7.0.3",
-    "luxon": "^2.3.0",
+    "luxon": "^3.0.1",
     "rimraf": "^3.0.2"
   },
   "repository": {
